@@ -1,8 +1,8 @@
 #include "mymalloc.h"
 void * mymalloc(int min_size){
-	static struct meta *master;
+	static struct meta *master; 
 	struct meta *current_meta;
-	struct meta *temp;
+	struct meta *temp; //Just a temp one to hold next before it is put into the linked list
 	if(min_size > 4080){
 		printf("%s\n", "error.");
 		return NULL;
@@ -11,18 +11,19 @@ void * mymalloc(int min_size){
 	if(memory[0] != magic1 ||  memory[1] != magic2 ){ //For the first time malloc is called.
 		memory[0] = magic1;
 		memory[1] =  magic2;
-		memory[3] = (struct meta*) memory[3]; //Right here is the I cast a specific part of of the array to a struct pointer so I can store the address of master here and then 
-		memory[3] = &master; //should be able to edit it. Some reason it wont let me edit it in line 18, which is causing the seg fault. If we get this to work then
-		printf("%p\n", memory[3]); // we have to redo basically everything that is going on below it.
-		printf("%p\n", &master);
-		memory[3]->size = min_size; //Seg faults here.
+		master = (struct meta*) memory;
+		master->inuse = 'b';
+		master->size = min_size;
 	}
 	current_meta = master;
+	printf("%c\n", current_meta->inuse);
 	while(current_meta != 0){
-		printf("%c\n", current_meta->inuse);
 		if(current_meta->inuse == 'b'){
-			current_meta = current_meta->next; 
+			current_meta = current_meta->next; //Broke here
 		}
+//		else if(current_meta->inuse != 'b' && current_meta->size < (min_size + sizeof(struct meta))){
+//			current_meta->inuse = NULL;
+//		}
 		else{
 			temp = (struct meta*)((char*)current_meta + sizeof(struct meta) + min_size);
 			temp->size = min_size;
@@ -30,7 +31,7 @@ void * mymalloc(int min_size){
 			printf("%d\n", temp->size);
 			temp->last = current_meta;
 			temp->next = current_meta->next;
-			current_meta->size = 0;
+			current_meta = 0;
 			return 0; 
 		}
 	}
