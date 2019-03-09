@@ -10,16 +10,16 @@ void testOne(){
 		free(a);
 	}
 }
-//testTwo: malloc 150 1 byte pointers, then free all the pointers after
+//testTwo: malloc 50 1 byte pointers, then free all the pointers after. Does this 150 times
 void testTwo(){
-	char* pntrs[150];
+	char* pntrs[50];
 	int i = 0;
 	int x = 0;
 		while(x < 3){
-			for(i = 0; i < 150; i++){
+			for(i = 0; i < 50; i++){
 				pntrs[i] = (char*) malloc(1);
 			}
-			for(i = 0; i < 150; i++){
+			for(i = 0; i < 50; i++){
 				free(pntrs[i]);
 			}
 			x += 1;
@@ -39,11 +39,13 @@ void testThree(){
 			malloc_done += 1;
 		}
 		else if(randoms == 1){
-			free(pntrs[free_done]);
-			free_done += 1;
+			while(malloc_done > free_done){
+				free(pntrs[free_done]);
+				free_done += 1;
+			}
 		}
 	}
-	if(malloc_done = 50){
+	if(malloc_done == 50){
 		while(free_done < 50){
 			free(pntrs[free_done]);
 			free_done += 1;
@@ -53,30 +55,33 @@ void testThree(){
 //testFour: Randomly chooses to malloc a randomly size pointer that is size between 1-64 or freeing a pointer. Tracks to make sure that the mallocs do not exceed the
 //max size of the array. Once malloc is called 50 times it iterates through the array of pointers freeing them all.
 void testFour(){
-		char*pntrs[50];
-		int malloc_done = 0;
-		int free_done = 0;
-		int i = 0;
-		int total_malloc = 0;
-		while(malloc_done < 50){
-			int randoms = rand() % 2;
-			if(randoms == 0){
-				int random_size = (rand() % 64) + 1;
-				if((total_malloc + random_size)  > 4016){
-					random_size = (rand() % (4096 - total_malloc) + 1);
-				}
-			pntrs[malloc_done] = (char*) malloc(random_size);
-			total_malloc = total_malloc + random_size + 16;
-			malloc_done += 1;
+	char* pntrs[50];
+	int malloc_done = 0;
+	int free_done = 0;
+	int i = 0;
+	int total_malloc = 0;
+	while(malloc_done < 50){
+		int randoms = rand() % 2;
+		if(randoms == 0){
+			int random_size = (rand() % 64) + 1;
+			if((total_malloc + random_size)  > 4016){
+				random_size = (rand() % (4096 - total_malloc) + 1);
+			}
+		pntrs[malloc_done] = (char*) malloc(random_size);
+		total_malloc = total_malloc + random_size + 20;
+		malloc_done += 1;
 		}
 			else if(randoms == 1){
-				free(pntrs[free_done]);
-				free_done += 1;
+				while(malloc_done >= free_done){
+					free(pntrs[free_done]);
+					free_done += 1;
+				}
 			}	
 		}
 	if(malloc_done == 50){
-		for(i = 0; i < 50; i++){
-			free(pntrs[i]);
+		while(free_done < 50){
+			free(pntrs[free_done]);
+			free_done += 1;
 		}
 	}
 }
@@ -109,7 +114,7 @@ void testSix(){
 	free(b - 6);
 	free(c);
 	free(x);
-	free(x + 800);
+	free(x + 8);
 	free(y);
 	free(z);
 	free(a);
@@ -121,8 +126,7 @@ int main(){
 	long totaltime;
 	int q = 0;
 	srand(time(NULL));
-    // Runs test one 100 times and records the times.
-   /* 
+    // Runs test one 100 times and records the times. 
 	printf("\n-------------------TEST 1-------------------\n");
 	gettimeofday(&time1, 0);
 	for(q = 0; q < 100; q++){
@@ -152,7 +156,7 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 3: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-*/	
+/*
 	printf("\n-------------------TEST 4-------------------\n");
 		gettimeofday(&time1, 0);
 		for(q = 0; q < 100; q++) {
@@ -162,7 +166,7 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 4: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-/*	
+*/
 	printf("\n-------------------TEST 5-------------------\n");
 		gettimeofday(&time1, 0);
 		for(q = 0; q < 100; q++) {
@@ -170,9 +174,9 @@ int main(){
 		}	
     gettimeofday(&time2, 0);
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
-    printf("Average time of test 4: %luμs\n", totaltime / 100);
+    printf("Average time of test 5: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-	
+
 	printf("\n-------------------TEST 6-------------------\n");
 		gettimeofday(&time1, 0);
 		for(q = 0; q < 100; q++) {
@@ -182,6 +186,7 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 6: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-*/
+
 	return 0;
 }
+
