@@ -119,14 +119,21 @@ void * mymalloc(size_t min_size){
 
 void myfree(void* pointer){
 	// check if the pointer leads to a valid memory location
-	if(){
-		
-	}
 	// if it does,
+	if((pointer <= (void*)(memory+SIZE)) && ((void*)memory<=pointer)){
 		// set the metadata to empty=1
+		struct meta *curr = pointer;
+		--curr;
+		curr->empty = 1;
 		// then defragment
+		defrag();
+	}
 	// else
+	else{
 		// print out an error message
+		printf("error2: You did not give a valid malloc pointer.\n");
+	}
+
 
 }
 
