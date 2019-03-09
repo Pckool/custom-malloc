@@ -16,7 +16,7 @@ struct meta {
 	size_t size;
 	struct meta *next;
 };
-struct meta *initList = (void*)memory;
+static struct meta *initList = (void*)memory;
 
 void * mymalloc(size_t min_size);
 void myfree(void* pointer);
