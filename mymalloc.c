@@ -82,27 +82,21 @@ void defrag(){
 	struct meta *curr, *last;
 	// the current is equal to the start
 	curr = initList;
-	// while there is a next metadata...
+	// while there is a next metadata and curr is not NULL...
 	while(curr != NULL && (curr->next) != NULL){
-		printf("%s\n", "\there1");
 		// if curr is empty (unallocated) and the next block is empty (unallocated)...
 		if((curr->empty) && (curr->next->empty)){
-			printf("%s\n", "\there2");
 			// set the current meta size to the size of the next block and it's metadata
 			curr->size += (curr->next->size) + sizeof(struct meta);
 			// the next meta in the current meta is set to the next meta in the next meta (does that even make sense? It does to me so lmao)
 			curr->next = curr->next->next;
-			printf("%s\n", "\there3");
 		}
 		// the last meta is now equal to the current meta
-		printf("%s\n", "\there4");
 		last = curr;
 		// the current meta is now equal to the next meta
 		curr = curr->next;
 		// these last two lines we are basically traversing the different metadatas in the linked list
-		printf("%s\n", "\there5");
 	}
-	printf("%s\n", "\tdone");
 }
 
 /**
