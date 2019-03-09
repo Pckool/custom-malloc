@@ -83,7 +83,7 @@ void defrag(){
 	// the current is equal to the start
 	curr = initList;
 	// while there is a next metadata...
-	while((curr->next) != NULL){
+	while(curr != NULL && (curr->next) != NULL){
 		printf("%s\n", "\there1");
 		// if curr is empty (unallocated) and the next block is empty (unallocated)...
 		if((curr->empty) && (curr->next->empty)){
