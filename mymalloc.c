@@ -100,6 +100,7 @@ void defrag(){
 		// the current meta is now equal to the next meta
 		curr = curr->next;
 		// these last two lines we are basically traversing the different metadatas in the linked list
+		printf("%s\n", "\there5");
 	}
 	printf("%s\n", "\tdone");
 }
