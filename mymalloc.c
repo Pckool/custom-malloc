@@ -52,69 +52,6 @@ void * mymalloc(size_t min_size){
 		// return a null pointer
 		return pointer;
 	}
-
-
-
-
-
-
-
-// 	static struct meta *master;
-// 	struct meta *current_meta;
-// 	struct meta *temp; //Just a temp one to hold next before it is put into the linked list
-// 	if(min_size > SIZE){
-// 		printf("%s\n", "error.");
-// 		return NULL;
-// 	}
-//
-//
-//
-//
-// 	if(memory[INIT] == '\0'){
-// 		int i;
-// 		for(i=0; i<SIZE; ++i){
-// 			memory[i] = '\0';
-// 		}
-// 		memory[INIT] = 'i';
-// 		memory[START] = 'f';
-// 		*(int*)(&memory[START + 1]) = 19994; // Take an address, cast into an int pointer
-// 		printf("Initialized\n");
-// 	}
-// 	int i = STRT;
-//
-// 	if(min_size > SIZE){
-// 		printf("%s\n", "error.");
-// 		return NULL;
-// 	}
-//
-//
-// 	if(memory[0] != magic1 ||  memory[1] != magic2 ){ //For the first time malloc is called.
-// 		memory[0] = magic1;
-// 		memory[1] =  magic2;
-// 		master = (struct meta*) memory;
-// 		master->empty = 'b';
-// 		master->size = min_size;
-// 	}
-// 	current_meta = master;
-// 	printf("%c\n", current_meta->empty);
-// 	while(current_meta != 0){
-// 		if(current_meta->empty == 'b'){
-// 			current_meta = current_meta->next; //Broke here
-// 		}
-// //		else if(current_meta->empty != 'b' && current_meta->size < (min_size + sizeof(struct meta))){
-// //			current_meta->empty = NULL;
-// //		}
-// 		else{
-// 			temp = (struct meta*)((char*)current_meta + sizeof(struct meta) + min_size);
-// 			temp->size = min_size;
-// 			printf("%s\n", "Does it make it here");
-// 			printf("%d\n", temp->size);
-// 			temp->last = current_meta;
-// 			temp->next = current_meta->next;
-// 			current_meta = 0;
-// 			return 0;
-// 		}
-// 	}
 }
 
 void myfree(void* pointer){
