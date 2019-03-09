@@ -24,7 +24,5 @@ void init();
 void segment(struct meta *chunk, size_t size);
 void defrag();
 
-int magic_yes = 44444;
-int magic_no = 77777;
 
 #endif

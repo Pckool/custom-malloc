@@ -47,7 +47,7 @@ void * mymalloc(size_t min_size){
 	}
 	// if there is no block with suficient memory
 	else{
-		result = NULL;
+		pointer = NULL;
 		printf("error0: There was no memory to allocate\n");
 		// return a null pointer
 		return pointer;
@@ -124,6 +124,6 @@ void segment(struct meta *big_block, size_t size){
 
 	// allocate the given memory block define the next metadata in the link as the one created
 	big_block->size = size;
-	big_block->free = 0;
+	big_block->empty = 0;
 	big_block->next = new;
 }
