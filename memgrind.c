@@ -61,20 +61,20 @@ void testFour(){
 		while(malloc_done < 50){
 			int randoms = rand() % 2;
 			if(randoms == 0){
-				int random_size = (rand() % 50) + 1;
+				int random_size = (rand() % 64) + 1;
 				if((total_malloc + random_size)  > 4016){
 					random_size = (rand() % (4096 - total_malloc) + 1);
 				}
 			pntrs[malloc_done] = (char*) malloc(random_size);
-			malloc_done += 1;
 			total_malloc = total_malloc + random_size + 16;
+			malloc_done += 1;
 		}
-		else if(randoms == 1){
-			free(pntrs[free_done]);
-			free_done += 1;
+			else if(randoms == 1){
+				free(pntrs[free_done]);
+				free_done += 1;
+			}	
 		}
-	}
-	if(malloc_done = 50){
+	if(malloc_done == 50){
 		for(i = 0; i < 50; i++){
 			free(pntrs[i]);
 		}
@@ -122,7 +122,7 @@ int main(){
 	int q = 0;
 	srand(time(NULL));
     // Runs test one 100 times and records the times.
-    
+   /* 
 	printf("\n-------------------TEST 1-------------------\n");
 	gettimeofday(&time1, 0);
 	for(q = 0; q < 100; q++){
@@ -152,7 +152,7 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 3: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-	
+*/	
 	printf("\n-------------------TEST 4-------------------\n");
 		gettimeofday(&time1, 0);
 		for(q = 0; q < 100; q++) {
@@ -162,7 +162,7 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 4: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-	
+/*	
 	printf("\n-------------------TEST 5-------------------\n");
 		gettimeofday(&time1, 0);
 		for(q = 0; q < 100; q++) {
@@ -182,6 +182,6 @@ int main(){
     totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 6: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-	*/
+*/
 	return 0;
 }
