@@ -3,10 +3,14 @@
 #include "mymalloc.h"
 //testOne: malloc 1 1 byte pointer, then free it immediately. Does this 150 times.
 void testOne(){
+	printf("%c\n", 'b'); 
 	int i = 0;
 	char* a;
+	printf("%c\n", 'c');
 	for(i = 0; i < 150; i++){
+		printf("%c\n", 'd');
 		a = (char*) malloc(1);
+		printf("%c\n", 'e');
 		free(a);
 	}
 }
@@ -115,77 +119,72 @@ void testSix(){
 	free(b);
 }
 int main(){
-    /*
 	struct timeval time1;
 	struct timeval time2;
-	long total;
-	int i = 0;
+	long totaltime;
+	int q = 0;
 	srand(time(NULL));
     // Runs test one 100 times and records the times.
     
 	printf("\n-------------------TEST 1-------------------\n");
-	gettimeofday(&t0, 0);
-	for(i = 0; i < 100; i++){
+	gettimeofday(&time1, 0);
+	for(q = 0; q < 100; q++){
+		printf("%d\n", q);
 		testOne();
 	}
-	gettimeofday(&t1, 0);
-    totaltime = (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+	gettimeofday(&time2, 0);
+    totaltime = (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
 	printf("Average time of test 1: %luμs\n", totaltime / 100);
 	//Add function call that prints the memory
 	
 	printf("\n-------------------TEST 2-------------------\n");
-		gettimeofday(&t0, 0);
-		for(i = 0; i < 100; i++) {
+		gettimeofday(&time1, 0);
+		for(q = 0; q < 100; q++) {
 			testTwo();
 		}	
-    gettimeofday(&t1, 0);
-    totaltime= (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+    gettimeofday(&time2, 0);
+    totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 2: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
 
     printf("\n-------------------TEST 3-------------------\n");
-		gettimeofday(&t0, 0);
-		for(i = 0; i < 100; i++) {
+		gettimeofday(&time1, 0);
+		for(q = 0; q < 100; q++) {
 			testThree();
 		}	
-    gettimeofday(&t1, 0);
-    totaltime= (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+    gettimeofday(&time2, 0);
+    totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 3: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
 	
 	printf("\n-------------------TEST 4-------------------\n");
-		gettimeofday(&t0, 0);
-		for(i = 0; i < 100; i++) {
+		gettimeofday(&time1, 0);
+		for(q = 0; q < 100; q++) {
 			testFour();
 		}	
-    gettimeofday(&t1, 0);
-    totaltime= (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+    gettimeofday(&time2, 0);
+    totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 4: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
 	
 	printf("\n-------------------TEST 5-------------------\n");
-		gettimeofday(&t0, 0);
-		for(i = 0; i < 100; i++) {
+		gettimeofday(&time1, 0);
+		for(q = 0; q < 100; q++) {
 			testFive();
 		}	
-    gettimeofday(&t1, 0);
-    totaltime= (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+    gettimeofday(&time2, 0);
+    totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 4: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
 	
 	printf("\n-------------------TEST 6-------------------\n");
-		gettimeofday(&t0, 0);
-		for(i = 0; i < 100; i++) {
+		gettimeofday(&time1, 0);
+		for(q = 0; q < 100; q++) {
 			testSix();
 		}	
-    gettimeofday(&t1, 0);
-    totaltime= (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
+    gettimeofday(&time2, 0);
+    totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     printf("Average time of test 6: %luμs\n", totaltime / 100);
     //Add function call that prints the memory
-	
-	*/
-	char* p;
-	p = (char*) malloc(150);
-	printf("%s\n", p);
 	return 0;
 }
