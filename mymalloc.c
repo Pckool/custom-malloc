@@ -47,7 +47,7 @@ void * mymalloc(size_t min_size){
 	}
 	// if there is no block with suficient memory
 	else{
-	//	result = NULL;
+		pointer = NULL;
 		printf("error0: There was no memory to allocate\n");
 		// return a null pointer
 		return pointer;
@@ -82,8 +82,8 @@ void defrag(){
 	struct meta *curr, *last;
 	// the current is equal to the start
 	curr = initList;
-	// while there is a next metadata...
-	while((curr->next) != NULL){
+	// while there is a next metadata and curr is not NULL...
+	while(curr != NULL && (curr->next) != NULL){
 		// if curr is empty (unallocated) and the next block is empty (unallocated)...
 		if((curr->empty) && (curr->next->empty)){
 			// set the current meta size to the size of the next block and it's metadata
@@ -97,7 +97,6 @@ void defrag(){
 		curr = curr->next;
 		// these last two lines we are basically traversing the different metadatas in the linked list
 	}
-
 }
 
 /**
