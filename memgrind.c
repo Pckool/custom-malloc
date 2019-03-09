@@ -186,6 +186,6 @@ int main(){
 	*/
 	char* p;
 	p = (char*) malloc(150);
-	printf("%s\n", p);
+	printf("%p\n", p);
 	return 0;
 }
