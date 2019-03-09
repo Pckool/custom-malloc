@@ -8,4 +8,4 @@ memgrind:
 	./memgrind.out
 
 clean:
-	rm memgrind.out rm mymalloc.o
+	rm memgrind.out; rm mymalloc.o
