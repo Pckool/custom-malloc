@@ -47,7 +47,7 @@ void * mymalloc(size_t min_size){
 	}
 	// if there is no block with suficient memory
 	else{
-		result = (void*)NULL;
+		void* result = NULL;
 		printf("error0: There was no memory to allocate\n");
 		// return a null pointer
 		return pointer;
