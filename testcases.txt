@@ -1,0 +1,282 @@
+
+-------------------TEST 1-------------------
+Average time of test 1: 2μs
+
+-------------------TEST 2-------------------
+Average time of test 2: 23μs
+
+-------------------TEST 3-------------------
+Average time of test 3: 2μs
+
+-------------------TEST 5-------------------
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+error1: Tried to allocate memory larger than or equal to the entire memory block
+error2: You did not give a valid malloc pointer.
+error2: You did not give a valid malloc pointer.
+er
