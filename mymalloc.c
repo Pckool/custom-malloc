@@ -55,9 +55,21 @@ void * mymalloc(size_t min_size){
 }
 
 void myfree(void* pointer){
+	struct meta* x = (struct meta*)(((char*)pointer) - sizeof(struct meta));
+	if ((char*) x < memory || (char*) x >= memory + sizeof(memory)){
+		printf("%s\n", "error1");
+		return NULL;
+	}
+	else if(x->empty != 0){
+		printf("%s\n", "error2");
+		return NULL;
+	}
+
 	// check if the pointer leads to a valid memory location
 	// if it does,
-	if((pointer <= (void*)(memory+SIZE)) && ((void*)memory<=pointer)){
+
+//	if((pointer <= (void*)(memory+SIZE)) && ((void*)memory<=pointer)){
+	else{
 		// set the metadata to empty=1
 		struct meta *curr = pointer;
 		--curr;
@@ -65,14 +77,15 @@ void myfree(void* pointer){
 		// then defragment
 		defrag();
 	}
-	// else
+/*	// else
 	else{
 		// print out an error message
 		printf("error2: You did not give a valid malloc pointer.\n");
 	}
 
-
+*/
 }
+
 
 /**
  * This function will defragment the memory blocks.
