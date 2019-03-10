@@ -21,7 +21,7 @@ void * mymalloc(size_t min_size){
 	curr = initList;
 
 	// checking the metadata one by one until we reach a block that can fit or we reach NULL (no next meta block).
-	while((curr->next != NULL) && (((curr->empty) == 0) || ((curr->size) < min_size))){
+	while(((curr->next != NULL) && (((curr->empty) == 0) || ((curr->size) < (min_size + sizeof(struct meta)))))){
 		// set the last mata to the current one (temp)
 		last = curr;
 		// set the curr meta to the next one (or NULL)
@@ -67,7 +67,9 @@ void myfree(void* pointer){
 
 	// check if the pointer leads to a valid memory location
 	// if it does,
-	if((pointer <= (void*)(memory + SIZE)) && ((void*)memory<=pointer)){
+
+//	if((pointer <= (void*)(memory+SIZE)) && ((void*)memory<=pointer)){
+	else if(x->empty == 0){
 		// set the metadata to empty=1
 		struct meta *curr = pointer;
 		--curr;
@@ -75,13 +77,13 @@ void myfree(void* pointer){
 		// then defragment
 		defrag();
 	}
-/*	// else
+	// else
 	else{
 		// print out an error message
 		printf("error2: You did not give a valid malloc pointer.\n");
 	}
 
-*/
+
 }
 
 
@@ -96,18 +98,23 @@ void defrag(){
 	// while there is a next metadata and curr is not NULL...
 	while(curr != NULL && (curr->next) != NULL){
 		// if curr is empty (unallocated) and the next block is empty (unallocated)...
-		if((curr->empty) && (curr->next->empty)){
+		if((curr->empty != 0) && (curr->next->empty != 0)){
 			// set the current meta size to the size of the next block and it's metadata
 			curr->size += (curr->next->size) + sizeof(struct meta);
 			// the next meta in the current meta is set to the next meta in the next meta (does that even make sense? It does to me so lmao)
 			curr->next = curr->next->next;
 		}
 		// the last meta is now equal to the current meta
-		last = curr;
 		// the current meta is now equal to the next meta
+		last = curr;
 		curr = curr->next;
 		// these last two lines we are basically traversing the different metadatas in the linked list
 	}
+//	curr = initList;
+//	while (curr != NULL){
+//	printf("%d\n", curr->size);
+//	curr = curr->next;
+//	}
 }
 
 /**

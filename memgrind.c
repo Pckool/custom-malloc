@@ -55,36 +55,74 @@ void testThree(){
 //testFour: Randomly chooses to malloc a randomly size pointer that is size between 1-64 or freeing a pointer. Tracks to make sure that the mallocs do not exceed the
 //max size of the array. Once malloc is called 50 times it iterates through the array of pointers freeing them all.
 void testFour(){
+	char pntrs[50];
+	int total_size = 0;
+	int mallocs_called = 0;
+	int frees_called = 0;
+	while (mallocs_called < 50){
+		int odds = rand() % 2;
+		if (odds == 0){
+			int size = (rand() % 63) + 1;
+			total_size = total_size + size + 20;
+			if(total_size >= 4000){
+				while(mallocs_called > frees_called){
+					free(pntrs[frees_called]);
+					frees_called += 1;
+				}
+				total_size = 0;
+			}
+		
+			else{
+				pntrs[mallocs_called] = (char*) malloc(size);
+				mallocs_called += 1;
+			}
+		}
+		else {
+			if(mallocs_called > frees_called){
+				free(pntrs[frees_called]);
+				frees_called +=1;
+			}
+		}
+	}
+	while(mallocs_called > frees_called){
+		free(pntrs[frees_called]);
+		frees_called += 1;
+	}
+}
+/*
+void testFour(){
 	char* pntrs[50];
 	int malloc_done = 0;
 	int free_done = 0;
-	int i = 0;
 	int total_malloc = 0;
+	int i;
 	while(malloc_done < 50){
-		int randoms = rand() % 2;
+		int radoms = rand() % 2;
 		if(randoms == 0){
-			int random_size = (rand() % 64) + 1;
-			if((total_malloc + random_size)  > 4016){
-				random_size = (rand() % (4096 - total_malloc) + 1);
-			}
-		pntrs[malloc_done] = (char*) malloc(random_size);
-		total_malloc = total_malloc + random_size + 20;
-		malloc_done += 1;
-		}
-			else if(randoms == 1){
-				while(malloc_done >= free_done){
+			int random_size = (rand() % 63) + 1;
+			if((total_malloc + random_size + 24)  >= 4000){
+				while (malloc_done > free_done){
 					free(pntrs[free_done]);
 					free_done += 1;
+					total_malloc = 0;
 				}
-			}	
+			}
+		pntrs[malloc_done] = (char) malloc(random_size);
+		total_malloc = total_malloc + random_size + 16;
+		malloc_done += 1;
 		}
-	if(malloc_done == 50){
-		while(free_done < 50){
+		else if(randoms == 1){
+			while(malloc_done > free_done){
 			free(pntrs[free_done]);
 			free_done += 1;
-		}
+			}
+		}	
 	}
+		for(i = free_done; i  < malloc_done; i++){
+			free(pntrs[i]);
+		}
 }
+*/
 //testFive: Mallocs a pointer of 1000 bytes and a pointer of 5000. Should catch the the second malloc and send back an error. Then it frees both pointers. 
 //Should free the first pointer and then catch the second free and send back an error. Then it tries to free both pointers again. This time it should
 //catch both of them and send back an error for both.
@@ -111,18 +149,21 @@ void testSix(){
 	a = (char*) malloc(500);
 	b = (char*) malloc(500);
 	c = (char*) malloc(500);
-	printf("%p\n", a + 10);
-	printf("%p\n", a);
-	free(a + 10);
 	printf("%c\n", 'a');
-	free(b - 6);
+	free(a + rand() % 4000);
 	printf("%c\n", 'b');
+	free(b - rand() % 4000);
+	printf("%c\n", 'c');
 	free(c);
-	printf("%s\n", "free c");
+	printf("%c\n", 'd');
 	free(x);
+	printf("%c\n", 'e');
 	free(y);
+	printf("%c\n", 'f');
 	free(z);
+	printf("%c\n", 'g');
 	free(a);
+	printf("%c\n", 'h');
 	free(b);
 
 }
@@ -133,6 +174,7 @@ int main(){
 	long totaltime;
 	int q = 0;
 	srand(time(NULL));
+/*
     // Runs test one 100 times and records the times. 
 	printf("\n-------------------TEST 1-------------------\n");
 	gettimeofday(&time1, 0);
@@ -164,7 +206,8 @@ int main(){
     	printf("Average time of test 3: %luμs\n", totaltime / 100);
     	//Add function call that prints the memory
 
-/*
+*/
+
 	printf("\n-------------------TEST 4-------------------\n");
 	gettimeofday(&time1, 0);
 	for(q = 0; q < 100; q++) {
@@ -175,7 +218,8 @@ int main(){
     	printf("Average time of test 4: %luμs\n", totaltime / 100);
    	//Add function call that prints the memory
 
-*/
+/*
+
 	printf("\n-------------------TEST 5-------------------\n");
 	gettimeofday(&time1, 0);
 	for(q = 0; q < 100; q++) {
@@ -196,7 +240,7 @@ int main(){
     	totaltime= (time2.tv_sec-time1.tv_sec)*1000000 + time2.tv_usec-time1.tv_usec;
     	printf("Average time of test 6: %luμs\n", totaltime / 100);
     	//Add function call that prints the memory
-
+*/
 
 	return 0;
 }
