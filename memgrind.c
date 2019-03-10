@@ -55,23 +55,26 @@ void testThree(){
 //testFour: Randomly chooses to malloc a randomly size pointer that is size between 1-64 or freeing a pointer. Tracks to make sure that the mallocs do not exceed the
 //max size of the array. Once malloc is called 50 times it iterates through the array of pointers freeing them all.
 void testFour(){
-	char pntrs[50];
+	char* pntrs[50];
 	int total_size = 0;
 	int mallocs_called = 0;
 	int frees_called = 0;
+	int sizes[50];
+	int i;
 	while (mallocs_called < 50){
 		int odds = rand() % 2;
 		if (odds == 0){
 			int size = (rand() % 63) + 1;
+			sizes[i] = size + 20;
 			total_size = total_size + size + 20;
 			if(total_size >= 4000){
-				while(mallocs_called > frees_called){
+				if(mallocs_called > frees_called){
 					free(pntrs[frees_called]);
+					total_size = total_size - sizes[frees_called];
 					frees_called += 1;
 				}
 				total_size = 0;
 			}
-		
 			else{
 				pntrs[mallocs_called] = (char*) malloc(size);
 				mallocs_called += 1;
@@ -80,6 +83,7 @@ void testFour(){
 		else {
 			if(mallocs_called > frees_called){
 				free(pntrs[frees_called]);
+				total_size = total_size - sizes[frees_called];
 				frees_called +=1;
 			}
 		}
@@ -88,41 +92,7 @@ void testFour(){
 		free(pntrs[frees_called]);
 		frees_called += 1;
 	}
-}
-/*
-void testFour(){
-	char* pntrs[50];
-	int malloc_done = 0;
-	int free_done = 0;
-	int total_malloc = 0;
-	int i;
-	while(malloc_done < 50){
-		int radoms = rand() % 2;
-		if(randoms == 0){
-			int random_size = (rand() % 63) + 1;
-			if((total_malloc + random_size + 24)  >= 4000){
-				while (malloc_done > free_done){
-					free(pntrs[free_done]);
-					free_done += 1;
-					total_malloc = 0;
-				}
-			}
-		pntrs[malloc_done] = (char) malloc(random_size);
-		total_malloc = total_malloc + random_size + 16;
-		malloc_done += 1;
-		}
-		else if(randoms == 1){
-			while(malloc_done > free_done){
-			free(pntrs[free_done]);
-			free_done += 1;
-			}
-		}	
-	}
-		for(i = free_done; i  < malloc_done; i++){
-			free(pntrs[i]);
-		}
-}
-*/
+} 
 //testFive: Mallocs a pointer of 1000 bytes and a pointer of 5000. Should catch the the second malloc and send back an error. Then it frees both pointers. 
 //Should free the first pointer and then catch the second free and send back an error. Then it tries to free both pointers again. This time it should
 //catch both of them and send back an error for both.
