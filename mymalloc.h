@@ -1,28 +1,16 @@
-#ifndef _mymalloc_h_
-#define _mymalloc_h_
+#ifndef MYMALLOC_H
+#define MYMALLOC_H
 #include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
-#define malloc(x) mymalloc(x)
-#define free(x) myfree(x)
-#define INIT 0 // if initialized, not \0. otherwise it will be \0
-#define SIZE 4096 // Size of the memory block
-#define STRT 5 // the location you can start storing data
-
-static char memory[4096];
-
-struct meta {
-	int empty;
-	size_t size;
-	struct meta *next;
-};
-static struct meta *initList = (void*)memory;
-
-void * mymalloc(size_t min_size);
-void myfree(void* pointer);
-void init();
-void segment(struct meta *chunk, size_t size);
-void defrag();
-
-
+#define SIZE 4096
+#define MAGIC 11119
+#define META 2
+#define malloc(x) mymalloc(x, __FILE__, __LINE__)
+#define free(x) myfree(x, __FILE__, __LINE__)
+static unsigned char RAM[SIZE];
+unsigned short int flag_get(unsigned short int index);
+unsigned short int getLength(unsigned short int index);
+void setLength(unsigned short int index, unsigned short int length);
+void setFlag(unsigned short int index, unsigned short int flag);
+void* mymalloc(size_t size, const char* fname, int lineno);
+void myfree(void* ptr, const char* fname, int lineno);
 #endif
