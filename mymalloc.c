@@ -57,7 +57,7 @@ void* mymalloc(size_t size, const char* fname, int lineno){
 		{
 			fprintf(stderr, "Error in mymalloc call in file %s, line %d: Can't malloc something that big.\n", fname, lineno);
 		}
-		//Error for when the size they are trying to allocate is zero or a negative. 
+		//Error for when the size they are trying to allocate is zero or a negative.
 		else
 		{
 			fprintf(stderr, "Error in mymalloc call in file %s, line %d: Size can't be zero or smaller.\n", fname, lineno);
@@ -103,7 +103,7 @@ void* mymalloc(size_t size, const char* fname, int lineno){
 	//Error for when there is not enough space for the malloc.
 	fprintf(stderr, "Error in mymalloc at file %s, line %d: Not enough space for malloc call.\n", fname, lineno);
 	return NULL;
-    
+
 }
 
 void myfree(void* ptr, const char* fname, int lineno)
@@ -123,9 +123,9 @@ void myfree(void* ptr, const char* fname, int lineno)
 		return;
 	}
 	//Goes through the array until we hit the pointer we want to free.
-	while(RAM + curr <= ptrb - META){	
+	while(RAM + curr <= ptrb - META){
 		if(RAM + curr == ptrb - META){
-			//Makes sure we are freeing an allocated block 
+			//Makes sure we are freeing an allocated block
 			if(flag_get(curr)){
 				flag_set(curr, 0);
 				// Defraging
